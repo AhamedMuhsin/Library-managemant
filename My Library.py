@@ -1,16 +1,19 @@
+# make class to make library
 class Library:
 
+#     add a contruter to construct the library
     def __init__(self, list , name):
         self.librarylist = list
         self.name = name
         self.lenddict = {}
 
-
+# add display book function to display the book 
     def displaybook(self):
         print(f"We have following book in our library : {self.name}")
         for book in self.librarylist:
                 print(book)
 
+# make lend book function to lend the book 
     def lendboook(self, user , book):
         if book not in self.lenddict.keys():
             self.lenddict.update({book:user})
@@ -18,14 +21,17 @@ class Library:
         else:
             print(f"Book is already taken by {self.lenddict[book]}")
 
+#  make add book function to add book
     def addbook(self, book):
         self.librarylist.append(book)
         print("Book has been added to the library list")
 
+# make return book function to retrun book
     def returnbook(self, book):
         self.lenddict.pop(book)
         print("You were successfully return the book")
 
+# add main function to run this program
 if __name__ == '__main__':
     Ahamed = Library(['Harry Potter', 'Python basic', 'Quran', 'what is programing'],
                      "Ahamed Muhsin")
@@ -70,63 +76,3 @@ if __name__ == '__main__':
                 exit()
             elif user_choice2 == "c":
                 continue
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
